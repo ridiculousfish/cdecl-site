@@ -5,7 +5,7 @@ import sys
 
 SYNTAX_ERROR="syntax error"
 
-def run_query(event, context):
+def lambda_handler(event, context):
 	query = event['q']
 	if not query:
 		return 'Bad query'
