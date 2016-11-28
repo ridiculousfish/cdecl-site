@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import json
 import os
 import subprocess
 import sys
@@ -12,6 +13,10 @@ def exe_path():
     return root + "/exe/cdecl_" + plat
 
 def lambda_handler(event, context):
+    headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type'
+    }
     query = event['queryStringParameters'].get('q')
     if not query:
         body = 'Bad query: ' + str(event['queryStringParameters'])
@@ -20,7 +25,7 @@ def lambda_handler(event, context):
         path = exe_path()
         body = run_3_cdecl(query, path)
         statusCode = 200
-    return {'statusCode': statusCode, 'headers': {}, 'body': body }
+    return {'statusCode': statusCode, 'headers': headers, 'body': json.dumps(body) }
 
 def run_3_cdecl(query, path):
     queries = [query, 'explain ' + query, 'declare ' + query]
