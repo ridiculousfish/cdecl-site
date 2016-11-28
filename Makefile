@@ -1,8 +1,8 @@
 LAMBDA_FILES := exe/cdecl_linux run_cdecl.py
 
-cdecl_lambda.zip:
+cdecl_lambda.zip: $(addprefix cdecl/,$(LAMBDA_FILES))
 	rm -f $@
-	cd cdecl && zip ../$@ ${LAMBDA_FILES}
+	cd cdecl && zip ../$@ $(LAMBDA_FILES)
 
 clean:
 	rm -f cdecl_lambda.zip
