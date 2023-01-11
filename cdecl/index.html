@@ -1,383 +1,381 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+
 <head>
-<style type="text/css">
+    <style type="text/css">
+        #examples {
+            margin-top: 0px;
+            margin-left: 20px;
+            margin-bottom: -300px;
+            height: 300px;
+            position: relative;
+            top: 10px;
+        }
 
-#examples {
-	margin-top: 0px;
-	margin-left: 20px;
-	margin-bottom: -300px;
-	height: 300px;
-	position: relative;
-	top: 10px;
-}
+        #example_instructions {
+            float: left;
+            height: 200px;
+            margin-right: 30px;
+            font-size: 14pt;
+        }
 
-#example_instructions {
-	float: left;
-	height: 200px;
-	margin-right: 30px;
-	font-size: 14pt;
-}
+        #examples ul {
+            list-style-type: none;
+            line-height: 22px;
+            position: relative;
+            bottom: 2px;
+            margin-top: 0px;
+        }
 
-#examples ul {
-	list-style-type: none;
-	line-height: 22px;
-	position: relative;
-	bottom: 2px;
-	margin-top: 0px;
-}
+        #examples ul a {
+            color: #bbb;
+            text-decoration: underline;
+        }
 
-#examples ul a {
-	color: #bbb;
-	text-decoration: underline;
-}
+        body {
+            background-color: #152437;
+            margin: 0px;
+            color: #99b8bd;
+        }
 
-body {
-	background-color: #152437;
-	margin: 0px;
-	color: #99b8bd;
-}
+        #dark,
+        #dark_top {
+            background-color: #1c1c1c;
+            width: 100%;
+            z-index: -1;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
 
-#dark, #dark_top {
-	background-color: #1c1c1c;
-	width: 100%;
-	z-index: -1;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
+        #dark {
+            height: 50%;
+            top: 10px;
+        }
 
-#dark {
-	height: 50%;
-	top: 10px;
-}
+        #dark_top {
+            height: 30px;
+        }
 
-#dark_top {
-	height: 30px;
-}
+        h1,
+        h2 {
+            font-family: Monaco, "Lucida Console", Consolas, "Courier New", Courier, mono;
+            margin: 0px;
+            font-weight: normal;
+        }
 
-h1, h2 {
-	font-family: Monaco, "Lucida Console", Consolas, "Courier New", Courier, mono;
-	margin: 0px;
-	font-weight: normal;
-}
+        h1 {
+            font-size: 52px;
+            text-indent: 120px;
+            height: 69px;
+        }
 
-h1 {
-	font-size: 52px;
-	text-indent: 120px;
-	height: 69px;
-}
+        h2 {
+            font-size: 22px;
+            text-indent: 125px;
+            height: 32px;
+        }
 
-h2 {
-	font-size: 22px;
-	text-indent: 125px;
-	height: 32px;
-}
+        #vert_spacer {
+            height: 50%;
+            width: 100%;
+            margin: 0px;
+            min-height: 220px;
+        }
 
-#vert_spacer {
-	height: 50%;
-	width: 100%;
-	margin: 0px;
-	min-height: 220px;
-}
+        #title {
+            height: 400px;
+            width: 100%;
+            margin-top: -125px;
+            position: relative;
+            z-index: 2;
+        }
 
-#title {
-	height: 400px;
-	width: 100%;
-	margin-top: -125px;
-	position: relative;
-	z-index: 2;
-}
+        #curve {
+            position: absolute;
+            top: 50%;
+            z-index: -1;
+            margin-top: 10px;
+        }
 
-#curve {
-	position: absolute;
-	top: 50%;
-	z-index:-1;
-	margin-top: 10px;
-}
+        span.arrow {
+            font: 26px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+        }
 
-span.arrow {
-	font: 26px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-}
+        #searcher {
+            font-family: Monaco, Consolas, "Courier New", Courier, mono;
+            font-size: 14pt;
+            margin-left: 140px;
+            margin-top: 20px;
+            width: 70%;
+            min-width: 500px;
+        }
 
-#searcher {
-	font-family: Monaco, Consolas, "Courier New", Courier, mono;
-	font-size: 14pt;
-	margin-left: 140px;
-	margin-top: 20px;
-	width: 70%;
-	min-width: 500px;
-}
+        #text_result {
+            font-family: Monaco, "Lucida Console", Consolas, "Courier New", Courier, mono;
+            font-size: 16pt;
+            margin-left: 180px;
+            margin-right: 150px;
+            margin-top: 20px;
+        }
 
-#text_result {
-	font-family: Monaco, "Lucida Console", Consolas, "Courier New", Courier, mono;
-	font-size: 16pt;
-	margin-left: 180px;
-	margin-right: 150px;
-	margin-top: 20px;
-}
+        #permalink {
+            margin-left: 180px;
+            margin-top: 10px;
+            font: bold 10pt "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+        }
 
-#permalink {
-	margin-left: 180px;
-	margin-top: 10px;
-	font: bold 10pt "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-}
+        #permalink a {
+            text-decoration: none;
+            color: #666;
+        }
 
-#permalink a {
-	text-decoration: none;
-	color: #666;
-}
+        #spinner {
+            position: relative;
+            left: 135px;
+            top: 20px;
+            width: 34px;
+            height: 34px;
+            margin-bottom: -34px;
+            display: none;
+        }
 
-#spinner {
-	position: relative;
-	left: 135px;
-	top: 20px;
-	width: 34px;
-	height: 34px;
-	margin-bottom: -34px;
-	display: none;
-}
+        #encloser {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            min-height: 480px;
+            position: relative;
+        }
 
-#encloser {
-	width: 100%;
-	height: 100%;
-	margin: 0px;
-	padding: 0px;
-	min-height: 480px;
-	position: relative;
-}
+        #help {
+            float: right;
+            margin-right: 16px;
+            position: relative;
+            z-index: 1;
+            top: 10px;
+            text-align: right;
+            line-height: 1.3;
+        }
 
-#help {
-	float: right;
-	margin-right: 16px;
-	position: relative;
-	z-index:1;
-	top: 10px;
-	text-align: right;
-	line-height: 1.3;
-}
+        #help a {
+            color: #99b8bd;
+            text-decoration: underline;
+        }
 
-#help a {
-	color: #99b8bd;
-	text-decoration: underline;
-}
+        #gluck {
+            text-align: center;
+            position: absolute;
+            bottom: 32px;
+            right: 0px;
+            width: 100%;
+            z-index: 10;
+        }
 
-#gluck {
-	text-align: center;
-	position: absolute;
-	bottom: 32px;
-	right: 0px;
-	width: 100%;
-	z-index: 10;
-}
+        #attribution {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            padding-right: 5px;
+            padding-bottom: 3px;
+            text-align: right;
+            line-height: 115%;
+        }
 
-#attribution {
-	position: absolute;
-	bottom: 0px;
-	right: 0px;
-	padding-right: 5px;
-	padding-bottom: 3px;
-	text-align: right;
-}
+        #attribution a {
+            color: #99b8bd;
+            text-decoration: underline;
+        }
 
-#attribution a {
-	color: #99b8bd;
-	text-decoration: underline;
-}
+    </style>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/livesearch.js"></script>
+    <script type="text/javascript">
+        var CDECL_READY_CALLBACK = undefined;
+        var CDECL_READY = new Promise((resolver) => {
+            CDECL_READY_CALLBACK = resolver;
+        });
 
-</style>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/livesearch.js"></script>
-<script type="text/javascript">
+        Module = {
+            print: (output) => receive_cdecl_output(output),
+            onRuntimeInitialized: () => CDECL_READY_CALLBACK(),
+        };
+    </script>
+    <script type="text/javascript" src="js/cdecl.js"></script>
+    <script type="text/javascript">
 
- var QUERY_ENDPOINT = "https://xwd733f66f.execute-api.us-west-1.amazonaws.com/prod/cdecl_backend";
- var QUERYLESS_URL = location.protocol + '//' + location.host + location.pathname;
+        const QUERYLESS_URL = location.protocol + '//' + location.host + location.pathname;
+        const SYNTAX_ERROR = "syntax error";
 
- $(document).ready(function(){
-   var searcher = $("#searcher");
-   searcher.livesearch({
-	       searchCallback: searchFunction,
-	       queryDelay: 250,
-	       innerText: "",
-	       minimumSearchLength: 3
-   });
- });
- 
-function fade(x, direction) {
-  if (direction) x.fadeIn("fast");
-  else x.fadeOut("fast");
-}
- 
-var sLoadingCount = 0;
-function changeLoading(dx) {
-	sLoadingCount += dx;
-	fade($("#spinner"), sLoadingCount > 0);
-}
+        var cdecl_output = '';
+        function receive_cdecl_output(output) {
+            cdecl_output += output;
+        }
 
-function compute_permalink(nonplussedTerm) {
-    var plussedTerm = nonplussedTerm.replace(/ /g, "+");
-	return QUERYLESS_URL + "?q=" + escape(plussedTerm);
-}
+        var run_cdecl_cfunc = Module.cwrap('run_from_js', 'number', ['string']);
+        async function run_cdecl(query) {
+            await CDECL_READY;
+            cmds = [query + ';', 'explain ' + query + ';', 'declare ' + query + ';'];
+            for (var i = 0; i < cmds.length; i++) {
+                cdecl_output = '';
+                run_cdecl_cfunc(cmds[i]);
+                output = cdecl_output.trim();
+                if (output !== '' && output !== SYNTAX_ERROR) {
+                    return output;
+                }
+            }
+            return SYNTAX_ERROR;
+        }
 
-function transition_text(obj, txt, permalinkObj, showPermalink) {
-    if (txt == obj.text()) return;
-    var speed = 200;
-    permalinkObj.fadeOut(speed);
-	obj.slideUp(speed, function(){
-		obj.text(txt);
-		obj.slideDown(speed);
-        if (showPermalink) permalinkObj.fadeIn(speed);
-	});
-}
 
-function searchFunction(searchTerm) {
-   changeLoading(1);
-   queryURL = QUERY_ENDPOINT + '?' + $.param({q: searchTerm});
 
-   var finished = function(dataJSON, error){
-	   var data = dataJSON ? JSON.parse(dataJSON) : ''
-	   changeLoading(-1);
-	   var requestSuccess = (error == "success");
-	   var syntacticSuccess = (data.length > 0 && data != "syntax error");
-       var text_to_insert = (requestSuccess ? data : "Error " + error);
-       $("#permalink a").attr("href", compute_permalink(searchTerm));
-       transition_text($("#text_result"), text_to_insert, $("#permalink"), syntacticSuccess);
-   }
+        $(document).ready(function () {
+            var searcher = $("#searcher");
+            searcher.livesearch({
+                searchCallback: searchFunction,
+                queryDelay: 250,
+                innerText: "",
+                minimumSearchLength: 3
+            });
+        });
 
-	if (1) $.ajax({
-	   method: 'GET',
-	   url: queryURL,
+        function fade(x, direction) {
+            if (direction) x.fadeIn("fast");
+            else x.fadeOut("fast");
+        }
 
-		// 'xhr' option overrides jQuery's default
-		// factory for the XMLHttpRequest object.
-		// Use either in global settings or individual call as shown here.
-		xhr: function() {
-			// Get new xhr object using default factory
-			var xhr = jQuery.ajaxSettings.xhr();
-			// Copy the browser's native setRequestHeader method
-			var setRequestHeader = xhr.setRequestHeader;
-			// Replace with a wrapper
-			xhr.setRequestHeader = function(name, value) {
-				// Ignore the X-Requested-With header
-				if (name == 'X-Requested-With') return;
-				// Otherwise call the native setRequestHeader method
-				// Note: setRequestHeader requires its 'this' to be the xhr object,
-				// which is what 'this' is here when executed.
-				setRequestHeader.call(this, name, value);
-			}
-			// pass it on to jQuery
-			return xhr;
-		},
+        var sLoadingCount = 0;
+        function changeLoading(dx) {
+            sLoadingCount += dx;
+            fade($("#spinner"), sLoadingCount > 0);
+        }
 
-//	   headers: {'X-Requested-With': 'XMLHttpRequest'},
-	   success: finished,
-	   error: function(xhr, error) { finished('', error); }
-   });
+        function compute_permalink(nonplussedTerm) {
+            var plussedTerm = nonplussedTerm.replace(/ /g, "+");
+            return QUERYLESS_URL + "?q=" + escape(plussedTerm);
+        }
 
-   //if (0) $.get(queryURL, finished);
-}
+        function transition_text(obj, txt, permalinkObj, showPermalink) {
+            if (txt == obj.text()) return;
+            var speed = 200;
+            permalinkObj.fadeOut(speed);
+            obj.slideUp(speed, function () {
+                obj.text(txt);
+                obj.slideDown(speed);
+                if (showPermalink) permalinkObj.fadeIn(speed);
+            });
+        }
 
-function demo(ind) {
-	var selector = "#examples li:eq(" + ind + ") > a";
-	var text = $(selector).text();
-	$("#searcher").val(text);
-	searchFunction(text);
-}
-</script>
-  <title>cdecl: C gibberish &harr; English</title>
+        async function searchFunction(searchTerm) {
+            changeLoading(1);
+            var result = await run_cdecl(searchTerm);
+            changeLoading(-1);
+            var syntacticSuccess = (result.length > 0 && result !== SYNTAX_ERROR);
+            $("#permalink a").attr("href", compute_permalink(searchTerm));
+            transition_text($("#text_result"), result, $("#permalink"), syntacticSuccess);
+        }
+
+        function demo(ind) {
+            var selector = "#examples li:eq(" + ind + ") > a";
+            var text = $(selector).text();
+            $("#searcher").val(text);
+            searchFunction(text);
+        }
+    </script>
+    <title>cdecl: C gibberish &harr; English</title>
 </head>
+
 <body>
 
-  <div id="encloser">
-	  <div id="dark_top"></div>
-	  <div id="dark"></div>
-	  <div id="help">
-	      <a href="https://github.com/ridiculousfish/cdecl-blocks">Source Code</a>
-	  </div>
-	  <div id="examples">
-		<div id="example_instructions">
-		  Try these examples:
-		</div>
-		<ul>
-		  <li><a href="javascript:demo(0)">int (*(*foo)(void ))[3]</a></li>
-		  <li><a href="javascript:demo(1)">declare bar as volatile pointer to array 64 of const int</a></li>
-		  <li><a href="javascript:demo(2)">cast foo into block(int, long long) returning double</a></li>
+    <div id="encloser">
+        <div id="dark_top"></div>
+        <div id="dark"></div>
+        <div id="help">
+            <a href="https://github.com/ridiculousfish/cdecl-blocks">Source Code</a>
+        </div>
+        <div id="examples">
+            <div id="example_instructions">
+                Try these examples:
+            </div>
+            <ul>
+                <li><a href="javascript:demo(0)">int (*(*foo)(void ))[3]</a></li>
+                <li><a href="javascript:demo(1)">declare bar as volatile pointer to array 64 of const int</a></li>
+                <li><a href="javascript:demo(2)">cast foo into block(int, long long) returning double</a></li>
 
-		</ul>
-	  </div>
-	  <div id="vert_spacer">&nbsp;</div>
-	  <div id="title">
-		<h1>cdecl</h1>
-		<h2>C gibberish <span class="arrow">&harr;</span> English</h2><input id="searcher" name="hl">
-		<div id="spinner">
-		  <img src="images/spinner.gif" width="34" height="34">
-		</div>
-		<div id="text_result">
-		</div>
-		<p id="permalink"><a href="">permalink</a></p>
-		
-	  </div>
-	  <img id="curve" src="images/curve.png" name="curve">
-	  
-<div id="gluck">
-</div>
-	  
-  </div>
+            </ul>
+        </div>
+        <div id="vert_spacer">&nbsp;</div>
+        <div id="title">
+            <h1>cdecl</h1>
+            <h2>C gibberish <span class="arrow">&harr;</span> English</h2><input id="searcher" name="hl">
+            <div id="spinner">
+                <img src="images/spinner.gif" width="34" height="34">
+            </div>
+            <div id="text_result">
+            </div>
+            <p id="permalink"><a href="">permalink</a></p>
 
-<div id="attribution">
-by <a href="http://ridiculousfish.com">ridiculous_fish</a>
-<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#x63;&#100;&#101;&#99;&#108;&#64;&#114;&#x69;&#100;&#105;&#99;&#117;&#x6c;&#111;&#x75;&#x73;&#102;&#x69;&#x73;&#x68;&#46;&#99;&#x6f;&#109;"><img src="images/mail_icon.gif" width=13 height=10 /></a>
-</div>
+        </div>
+        <img id="curve" src="images/curve.png" name="curve">
 
-<script type="text/javascript">
+        <div id="gluck">
+        </div>
 
-function getParameterByName(name) {
-    url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
-    var results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
+    </div>
 
-function applyPermalink() {
-	var q = getParameterByName('q')
-	if (q) {
-		$('#searcher').val(q);
-		searchFunction(q);
-	}
-	return !!q;
-}
+    <div id="attribution">
+        by <a href="https://ridiculousfish.com">ridiculous_fish</a>
+        <a
+            href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#x63;&#100;&#101;&#99;&#108;&#64;&#114;&#x69;&#100;&#105;&#99;&#117;&#x6c;&#111;&#x75;&#x73;&#102;&#x69;&#x73;&#x68;&#46;&#99;&#x6f;&#109;"><img
+                src="images/mail_icon.gif" width=13 height=10 /></a>
+        <br><small>(<a href="https://github.com/ridiculousfish/cdecl-blocks/blob/master/cdecl.c#L2">and many
+                others</a>)
+            <div style="display: inline-block; width: 13px"></span>
+        </small>
+    </div>
 
-function loadExample() {
-	examples = [
-      'int (*(*foo)(const void *))[3]', 'declare foo as pointer to function (pointer to const void) returning pointer to array 3 of int',
-      'char (*(*x())[5])()', 'declare x as function returning pointer to array 5 of pointer to function returning char',
-      'char (*(*x[3])())[5]', 'declare x as array 3 of pointer to function returning pointer to array 5 of char',
-      'char ** const * const x', 'declare x as const pointer to const pointer to pointer to char',
-      'char * const (*(* const bar)[5])(int )', 'declare bar as const pointer to array 5 of pointer to function (int) returning const pointer to char'
-	]
-	var idx = Math.floor(Math.random() * examples.length)
-	var query = examples[idx]
-	var output = examples[idx + ((idx & 1) ? -1 : 1)]
-	$('#searcher').val(query)
-	$('#text_result').text(output)
-}
+    <script type="text/javascript">
 
-if (! applyPermalink()) {
-	loadExample();
-}
+        function getParameterByName(name) {
+            url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+            var results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
 
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try{ 
-var pageTracker = _gat._getTracker("UA-15181739-1");
-pageTracker._trackPageview();
-} catch(err) {}
+        function applyPermalink() {
+            var q = getParameterByName('q')
+            if (q) {
+                $('#searcher').val(q);
+                searchFunction(q);
+            }
+            return !!q;
+        }
 
-</script>
+        function loadExample() {
+            examples = [
+                'int (*(*foo)(const void *))[3]', 'declare foo as pointer to function (pointer to const void) returning pointer to array 3 of int',
+                'char (*(*x())[5])()', 'declare x as function returning pointer to array 5 of pointer to function returning char',
+                'char (*(*x[3])())[5]', 'declare x as array 3 of pointer to function returning pointer to array 5 of char',
+                'char ** const * const x', 'declare x as const pointer to const pointer to pointer to char',
+                'char * const (*(* const bar)[5])(int )', 'declare bar as const pointer to array 5 of pointer to function (int) returning const pointer to char'
+            ]
+            var idx = Math.floor(Math.random() * examples.length)
+            var query = examples[idx]
+            var output = examples[idx + ((idx & 1) ? -1 : 1)]
+            $('#searcher').val(query)
+            $('#text_result').text(output)
+        }
+
+        if (!applyPermalink()) {
+            loadExample();
+        }
+
+    </script>
 </body>
+
 </html>
